@@ -1,19 +1,16 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import { SingleJob } from "./pages/SingleJob";
+
 function App() {
   return (
-    <div className="App">
-      <h1
-        style={{
-          height: "80vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: "40px",
-          color: "brown",
-        }}
-      >
-        Hurray!!! Happy building
-      </h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/jobdetails/:id" element={<SingleJob />} />
+      </Routes>
+    </Router>
   );
 }
 
